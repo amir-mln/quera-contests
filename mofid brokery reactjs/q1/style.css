@@ -1,0 +1,16 @@
+body {
+	background-color: whitesmoke;
+	font-family: "Courier New", Courier, monospace;
+	text-align: center;
+}
+
+.container {
+	margin: auto;
+	width: max-content;
+}
+
+.price {
+	/* TODO */
+    height: none;
+	width: none;
+}
