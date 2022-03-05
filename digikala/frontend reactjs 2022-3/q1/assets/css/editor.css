@@ -1,0 +1,50 @@
+#tools {
+  display: flex;
+  flex-direction: column;
+  width: min(600px, 100%);
+  gap: 8px;
+}
+
+#filters {
+  /* display: flex; */
+  /* gap: 8px; */
+  /* overflow: auto; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 8px;
+}
+
+#adjust {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#grayscale {
+  filter: grayscale(1);
+}
+
+#sepia {
+  filter: sepia(1);
+}
+
+#invert {
+  filter: invert(1);
+}
+
+#blur {
+  filter: blur(2px);
+}
+
+#saturate {
+  filter: saturate(2);
+}
+
+#contrast {
+  filter: contrast(2);
+}
+
+#hue-rotate {
+  filter: hue-rotate(90deg);
+}

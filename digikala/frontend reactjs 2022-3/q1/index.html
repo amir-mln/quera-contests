@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Image Editor</title>
+    <link rel="icon" href="./assets/img/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/editor.css" />
+    <script src="./script.js" defer></script>
+  </head>
+
+  <body>
+    <div id="modal">
+      <span id="modal-title">تصویر کالا</span>
+      <div id="modal-body">
+        <div
+          id="preview-container"
+          onmouseenter="handleMouseEnter()"
+          onmouseleave="handleMouseLeave()"
+          onmousemove="handleMouseMove(event)"
+        >
+          <div id="preview-scale">
+            <div id="preview-flip">
+              <div id="preview">
+                <img src="./assets/img/template.jpg" alt="preview" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="tools">
+          <span class="section-title">فیلترها</span>
+          <div id="filters" class="box">
+            <div>
+              <div class="thumb" onclick="handleFilter(event)">
+                <img id="none" src="./assets/img/template.jpg" alt="none" />
+              </div>
+              <span>none</span>
+            </div>
+            <div>
+              <div class="thumb" onclick="handleFilter(event)">
+                <img
+                  id="grayscale"
+                  src="./assets/img/template.jpg"
+                  alt="grayscale"
+                />
+              </div>
+              <span>grayscale</span>
+            </div>
+            <div>
+              <div class="thumb" onclick="handleFilter(event)">
+                <img id="sepia" src="./assets/img/template.jpg" alt="sepia" />
+              </div>
+              <span>sepia</span>
+            </div>
+            <div>
+              <div class="thumb" onclick="handleFilter(event)">
+                <img id="invert" src="./assets/img/template.jpg" alt="invert" />
+              </div>
+              <span>invert</span>
+            </div>
+            <div>
+              <div class="thumb" onclick="handleFilter(event)">
+                <img id="blur" src="./assets/img/template.jpg" alt="blur" />
+              </div>
+              <span>blur</span>
+            </div>
+            <div>
+              <div class="thumb" onclick="handleFilter(event)">
+                <img
+                  id="saturate"
+                  src="./assets/img/template.jpg"
+                  alt="saturate"
+                />
+              </div>
+              <span>saturate</span>
+            </div>
+            <div>
+              <div class="thumb" onclick="handleFilter(event)">
+                <img
+                  id="contrast"
+                  src="./assets/img/template.jpg"
+                  alt="contrast"
+                />
+              </div>
+              <span>contrast</span>
+            </div>
+            <div>
+              <div class="thumb" onclick="handleFilter(event)">
+                <img
+                  id="hue-rotate"
+                  src="./assets/img/template.jpg"
+                  alt="hue-rotate"
+                />
+              </div>
+              <span>hue-rotate</span>
+            </div>
+          </div>
+          <span class="section-title">تنظیمات</span>
+          <div id="adjust" class="box">
+            <div class="flex-container column">
+              <label>
+                <span>روشنایی</span>
+                <input
+                  type="range"
+                  min="0"
+                  max="2"
+                  step="0.1"
+                  id="brightness"
+                  oninput="handleBrightness()"
+                />
+                <span id="brightness-value" class="slider-value">1</span>
+              </label>
+              <label>
+                <span>چرخش</span>
+                <input
+                  type="range"
+                  min="0"
+                  max="360"
+                  step="10"
+                  value="0"
+                  id="rotate"
+                  oninput="handleRotate()"
+                />
+                <span id="rotate-value" class="slider-value">0</span>
+              </label>
+            </div>
+            <div class="flex-container">
+              <button
+                id="vertical"
+                title="vertical flip"
+                onclick="handleFlip(this.id)"
+              >
+                <img
+                  class="icon"
+                  src="./assets/img/flip.png"
+                  alt="flip vertical"
+                />
+              </button>
+              <button
+                id="horizontal"
+                title="horizontal flip"
+                onclick="handleFlip(this.id)"
+              >
+                <img
+                  class="icon"
+                  src="./assets/img/flip.png"
+                  alt="flip horizontal"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
